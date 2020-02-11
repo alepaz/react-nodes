@@ -11,6 +11,9 @@
 # production
 /build
 
+#code editor style
+settings.json
+
 # misc
 .DS_Store
 .env.local
