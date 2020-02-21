@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Node from "./components/Node";
+import Canvas from "./components/Canvas";
 
 function App() {
   const handlerPosition = function() {
@@ -17,13 +18,12 @@ function App() {
     );
   };
   return (
-    <div
+    <Canvas
       className="App"
-      style={{ height: 1000, width: "100%" }}
       onClick={handlerPosition}
     >
       <Node type="input" />
-    </div>
+    </Canvas>
   );
 }
 
