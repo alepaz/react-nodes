@@ -6,7 +6,7 @@ class Canvas extends Component {
   };
   render() {
     return (
-      <div style={{ height: 1000, width: "100%" }}>{this.props.children}</div>
+      <div style={{ height: 800, width: "100%" }}>{this.props.children}</div>
     );
   }
 }
