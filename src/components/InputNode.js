@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
 export default function Node(props) {
-  const [value, setValue] = useState({});
-  const { value } = props;
-  
   return <div> {props.type} </div>;
 }
+
+Node.propTypes = {
+  props: PropTypes.object,
+  type: PropTypes.string
+};

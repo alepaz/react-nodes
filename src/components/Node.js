@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-export default function Node(props) {
-  const [value, setValue] = useState({});
+export default function Node() {
   const [positionX, setPositionX] = useState(500);
   const [positionY, setPositionY] = useState(500);
 

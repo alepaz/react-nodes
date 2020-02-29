@@ -1,14 +1,16 @@
-import React, { Component } from "react";
+import React, { useState, useMemo } from "react";
+import PropTypes from "prop-types";
 
-class Canvas extends Component {
-  state = {
-    result: {}
-  };
-  render() {
-    return (
-      <div style={{ height: 800, width: "100%" }}>{this.props.children}</div>
-    );
-  }
+export default function Canvas({ children }) {
+  const [operation] = useState(() => (a, b) => a + b);
+
+  return (
+    <div style={{ height: 1000, width: "100%" }}>
+      {children} Operation sum result: {operation(1, 4)}
+    </div>
+  );
 }
 
-export default Canvas;
+Canvas.propTypes = {
+  children: PropTypes.object
+};
