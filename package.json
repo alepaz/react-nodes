@@ -14,7 +14,18 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint --fix src/**/*.js",
+    "test:all": "set CI=true && react-scripts test && npm run lint",
+    "commit": "npx git-cz"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && husky-check-email @telusinternational.com",
+      "pre-push": "npx react-scripts test --watchAll=false",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +41,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "cz-conventional-changelog": "^3.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.3",
+    "husky": "^4.2.3",
+    "husky-check-email": "0.0.6"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
